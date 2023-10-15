@@ -467,15 +467,19 @@ class Interpreter:
                 self.is_interpret = False
         elif self.current_token() == "SOURCE":
             self.consume_token()
-            source_file = self.current_token()
+            source_file = ""
+            while self.index < len(self.tokens) and self.current_token() != "\n":
+                source_file += self.current_token()
+                self.consume_token()
             self.consume_token()
             source_file_new = source_file + ".impr"
             file_content = ''
             with open(source_file_new, 'r') as file:
                 file_content = file.read()
                 file.close()
-            file_tokens = re.findall(r'<.*?>|[A-Za-z]+|\d+\.\d+|\S|\n', file_content)
+            file_tokens = re.findall(r'<.*?>|\d+\.\d+|\d+|[A-Za-z]+|\S|\n', file_content)
             file_variables = {}
+            print(file_tokens)
             interpreter = Interpreter(file_tokens, file_variables)
             interpreter.get_lines()
             interpreter.get_marks()
@@ -538,7 +542,7 @@ variables = {}
 
 while True:
     user_input = input()
-    tokens = re.findall(r'<.*?>|[A-Za-z]+|\d+\.\d+|\S|\n', user_input)
+    tokens = re.findall(r'<.*?>|\d+\.\d+|\d+|[A-Za-z]+|\S|\n', user_input)
     interpreter = Interpreter(tokens, variables)
     interpreter.get_lines()
     interpreter.get_marks()
