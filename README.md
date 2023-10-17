@@ -13,7 +13,19 @@ A brief overview of the syntax of "Imperator":
 Values can be printed by typing ```P``` at the end of the line.
 
 ### Calculations
-Calculations can be called with ```M```. "Imperator" supports only 2-number-calculations. The value of the calculation can be printed with '''P'''
+Calculations can be called with ```M```. "Imperator" supports only 2-number-calculations. The value of the calculation can be printed with ```P```
 
+Example: ```M 1+2 P``` 
 
-Example: ```M 1+2 P``` "3" will be output
+The number "3" will be output
+
+Imperator also supports calculations with variables: ````M a+b P```
+
+### Strings
+Strings are written with a ```<`` at the beginning and a ```>``` at the end.
+
+Example: ```<Hello, World!> P```
+
+Variables can also be added to strings.
+
+Example: ```<Number: > + a P```
