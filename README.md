@@ -97,4 +97,13 @@ Example: ```V float = I : FLOAT```
 ### Round function
 Numbers can be rounded with ```$ROUND```
 
-Example: ```V roundedNumber = $ROUND```
+Example: ```V roundedNumber = $ROUND : 1.5```
+
+### Random function
+Random numbers can be generated with ```$RANDOM```
+
+**Random ints**
+
+Example: ```V randInt = $RANDOM : INT ; (1, 5)```
+
+This will generate a random int between 1 and 5
