@@ -54,9 +54,27 @@ Example: ```NEW test = 2```
 ### Loops
 The keyword for loops in Imperator is ```REPEAT```
 
-Example: 
+**Example:** 
 ```
 REPEAT 5 [
 M 1+1 P
 ]
+```
+This will output "2" for four times.
+
+**Example 2:**
+```
+V i = 0
+REPEAT 5 [
+NEW i = i + 1
+i P
+]
+```
+This will output:
+```
+1
+2
+3
+4
+5
 ```
