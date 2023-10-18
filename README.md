@@ -29,3 +29,17 @@ Example: ```<Hello, World!> P```
 Variables can also be added to strings.
 
 Example: ```<Number: > + a P```
+
+### Variables
+Imperator supports string and number variables.
+
+**Declare variables**
+The letter to declare a variable is ```V```
+
+Declare a variable: ```V``` + name + ```=``` + statement
+
+Example: ```V test = 1```
+
+Example 2: ```V math = M 1+1```
+
+Example 3: ```V string = <Test>
