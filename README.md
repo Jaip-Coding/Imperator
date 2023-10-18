@@ -34,6 +34,7 @@ Example: ```<Number: > + a P```
 Imperator supports string and number variables.
 
 **Declare variables**
+
 The letter to declare a variable is ```V```
 
 Declare a variable: ```V``` + name + ```=``` + statement
@@ -43,3 +44,9 @@ Example: ```V test = 1```
 Example 2: ```V math = M 1+1```
 
 Example 3: ```V string = <Test>```
+
+**Change variables**
+
+Changing variables works in the same as declaring variables, but the keyword is ```NEW```
+
+Example: ```NEW test = 2```
