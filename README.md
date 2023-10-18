@@ -19,10 +19,10 @@ Example: ```M 1+2 P```
 
 The number "3" will be output
 
-Imperator also supports calculations with variables: ````M a+b P```
+Imperator also supports calculations with variables: ```M a+b P```
 
 ### Strings
-Strings are written with a ```<`` at the beginning and a ```>``` at the end.
+Strings are written with a ```<``` at the beginning and a ```>``` at the end.
 
 Example: ```<Hello, World!> P```
 
