@@ -42,4 +42,4 @@ Example: ```V test = 1```
 
 Example 2: ```V math = M 1+1```
 
-Example 3: ```V string = <Test>
+Example 3: ```V string = <Test>```
