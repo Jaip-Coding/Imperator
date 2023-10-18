@@ -50,3 +50,13 @@ Example 3: ```V string = <Test>```
 Changing variables works in the same as declaring variables, but the keyword is ```NEW```
 
 Example: ```NEW test = 2```
+
+### Loops
+The keyword for loops in Imperator is ```REPEAT```
+
+Example: 
+```
+REPEAT 5 [
+M 1+1 P
+]
+```
