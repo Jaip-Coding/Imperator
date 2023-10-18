@@ -107,3 +107,9 @@ Random numbers can be generated with ```$RANDOM```
 Example: ```V randInt = $RANDOM : INT ; (1, 5)```
 
 This will generate a random int between 1 and 5
+
+**Random floats**
+
+Example: ```V randFloat = $RANDOM : FLOAT ; (1, 5)```
+
+This will generate a random float between 1 and 5
