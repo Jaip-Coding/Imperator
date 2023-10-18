@@ -78,3 +78,23 @@ This will output:
 4
 5
 ```
+
+### Input
+You can ask the user for a input with the keyword ```I```
+
+**String inputs**
+
+Example: ```V string = I```
+
+**Int inputs**
+
+Example: ```V int = I : INT```
+
+**Float inputs**
+
+Example: ```V float = I : FLOAT```
+
+### Round function
+Numbers can be rounded with ```$ROUND```
+
+Example: ```V roundedNumber = $ROUND```
