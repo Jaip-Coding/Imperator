@@ -157,7 +157,7 @@ This will interpret the line 5 to 7 and will then jump back and continue
 
 **Marks**
 
-Imperator also contains a feature called Marks. You can add a Mark by typing ```@``` + name. Then you can call a Mark like this: ```% = @``` + name. Imperator will jump to the line where you added the Mark. This can be helpful if the line numbers are changing often because of edits in your code.
+Imperator also contains a feature called marks. You can add a mark by typing ```@``` + name. Then you can call a mark like this: ```% = @``` + name. Imperator will jump to the line where you added the mark. This can be helpful if the line numbers are changing often because of edits in your code.
 
 Example:
 ```
