@@ -171,3 +171,10 @@ Example:
 
 ### Stop the script
 To stop the script you simply have to write ```#STOP```. The script will stop immediately if it encounters this keyword
+
+## Access and run Imperator files
+You can access and run Imperator files with ```SOURCE``` + file name (without file extension). Make sure that the file has the file extension ```.impr```
+
+Example: ```SOURCE TEST```
+
+This will access and run the file ```TEST.impr```
