@@ -85,7 +85,7 @@ You can call an if statement in Imperator as follows:
 
 **Operator: =**
 
-With ```=``` you can check if to values are the same.
+With ```=``` you can check if two values are the same.
 
 Example: ```IF a = 10 -> <Same value!> P```
 
@@ -94,6 +94,12 @@ Example: ```IF a = 10 -> <Same value!> P```
 With ```>``` you can check if a values is greater than a other one. ```<``` doesn't exist
 
 Example: ```IF a > 10 -> <a is greater than 10!> P```
+
+**Operator: !**
+
+With ```!``` you can check if two values are not the same.
+
+Example: ```IF a ! 10 -> <a is not 10!> P```
 
 ### Input
 You can ask the user for a input with the keyword ```I```
