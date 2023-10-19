@@ -135,3 +135,29 @@ This will generate a random int between 1 and 5
 Example: ```V randFloat = $RANDOM : FLOAT ; (1, 5)```
 
 This will generate a random float between 1 and 5
+
+### Jump to lines
+Imperator can jump to a new line with ```%```
+
+**Line numbers**
+
+To jump to a line by their line number, you have to write: ```% =``` + line number
+
+Example: ```% = 5```
+
+The program will jump to line 5
+
+**Ranges**
+
+With ranges Imperator can jump to a line and interpret everything until the other line. Then Imperator will jump back to the line where the range was called.
+
+Example: ```% = (5, 7)```
+
+This will interpret the line 5 to 7 and will then jump back and continue
+
+**Marks**
+
+Imperator also contains a feature called Marks. You can add a Mark by typing ```@``` + name. Then you can call a Mark like this: ```% = @``` + name. Imperator will jump to the line where you added the Mark. This can be helpful if the line numbers are changing often because of edits in your code.
+
+Example:
+```% 
