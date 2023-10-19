@@ -160,4 +160,11 @@ This will interpret the line 5 to 7 and will then jump back and continue
 Imperator also contains a feature called Marks. You can add a Mark by typing ```@``` + name. Then you can call a Mark like this: ```% = @``` + name. Imperator will jump to the line where you added the Mark. This can be helpful if the line numbers are changing often because of edits in your code.
 
 Example:
-```% 
+```
+% = @Test
+
+<This will not be output> P
+
+@Test
+<This will be output> P
+```
