@@ -79,6 +79,16 @@ This will output:
 5
 ```
 
+### If statement
+You can call an if statement in Imperator as follows:
+```IF``` + expression + ```->``` + statement
+
+**Operator: =**
+
+With ```=``` you can check if to values are the same.
+
+Example: ```IF a = 10 -> <Same value!> P```
+
 ### Input
 You can ask the user for a input with the keyword ```I```
 
