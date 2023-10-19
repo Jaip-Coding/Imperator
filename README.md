@@ -60,7 +60,7 @@ REPEAT 5 [
 M 1+1 P
 ]
 ```
-This will output "2" for four times.
+This will output "2" for five times.
 
 **Example 2:**
 ```
