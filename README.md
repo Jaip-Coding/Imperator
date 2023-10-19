@@ -89,6 +89,12 @@ With ```=``` you can check if to values are the same.
 
 Example: ```IF a = 10 -> <Same value!> P```
 
+**Operator: >**
+
+With ```>``` you can check if a values is greater than a other one. ```<``` doesn't exist
+
+Example: ```IF a > 10 -> <a is greater than 10!> P```
+
 ### Input
 You can ask the user for a input with the keyword ```I```
 
