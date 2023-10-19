@@ -168,3 +168,6 @@ Example:
 @Test
 <This will be output> P
 ```
+
+### Stop the script
+To stop the script you simply have to write ```#STOP```. The script will stop immediately if it encounters this keyword
