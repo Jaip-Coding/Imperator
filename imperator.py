@@ -155,6 +155,7 @@ class Interpreter:
                                     self.variables[var_name] = float(input())
                             else:
                                 print("ERROR: INVALID INPUT CALL")
+                                self.consume_token()
                         else:
                             self.variables[var_name] = input()
                             if self.index < len(self.tokens) and self.current_token() == "P":
@@ -173,6 +174,7 @@ class Interpreter:
                                     print(self.variables[var_name])
                             else:
                                 print("ERROR: INVALID ROUND CALL")
+                                self.consume_token()
                         elif self.index < len(self.tokens) and self.current_token() == "RANDOM":
                             self.consume_token()
                             if self.index < len(self.tokens) and self.current_token() == ":":
@@ -211,11 +213,13 @@ class Interpreter:
                                                 print(self.variables[var_name])
                             else:
                                 print("ERROR: INVALID RANDOM CALL")
+                                self.consume_token()
                     else:
                         self.variables[var_name] = float(self.current_token())
                         self.consume_token()
             else:
                 print("ERROR: VARIABLE ALREADY EXISTS")
+                self.consume_token()
         elif self.current_token()[0] == "<":
             self.string()
         elif self.tokens[self.index] == "NEW":
@@ -253,6 +257,7 @@ class Interpreter:
                                     self.variables[var_name] = float(input())
                             else:
                                 print("ERROR: INVALID INPUT CALL")
+                                self.consume_token()
                         else:
                             self.variables[var_name] = input()
                             if self.index < len(self.tokens) and self.current_token() == "P":
@@ -271,6 +276,7 @@ class Interpreter:
                                     print(self.variables[var_name])
                             else:
                                 print("ERROR: INVALID ROUND CALL")
+                                self.consume_token()
                         elif self.index < len(self.tokens) and self.current_token() == "RANDOM":
                             self.consume_token()
                             if self.index < len(self.tokens) and self.current_token() == ":":
@@ -309,17 +315,25 @@ class Interpreter:
                                                 print(self.variables[var_name])
                             else:
                                 print("ERROR: INVALID RANDOM CALL")
+                                self.consume_token()
                     else:
                         self.variables[var_name] = float(self.current_token())
                         self.consume_token()
             else:
                 print("ERROR: VARIABLE DOESN'T EXIST")
+                self.consume_token()
         elif self.current_token() == "$":
             self.consume_token()
             if self.index < len(self.tokens) and self.current_token() == "ROUND":
                 self.consume_token()
                 if self.index < len(self.tokens) and self.current_token() == ":":
                     self.consume_token()
+                    if self.index < len(self.tokens) and self.current_token() in self.variables:
+                        result = round(float(self.variables[self.current_token()]))
+                        self.consume_token()
+                        if self.index < len(self.tokens) and self.current_token() == "P":
+                            self.consume_token()
+                            print(result)
                     result = round(float(self.current_token()))
                     self.consume_token()
                     if self.index < len(self.tokens) and self.current_token() == "P":
@@ -327,6 +341,7 @@ class Interpreter:
                         print(result)
                 else:
                     print("ERROR: INVALID ROUND CALL")
+                    self.consume_token()
             elif self.index < len(self.tokens) and self.current_token() == "RANDOM":
                 self.consume_token()
                 if self.index < len(self.tokens) and self.current_token() == ":":
@@ -365,6 +380,7 @@ class Interpreter:
                                     print(result)
                 else:
                     print("ERROR: INVALID RANDOM CALL")
+                    self.consume_token()
         elif self.current_token() == "I":
             self.consume_token()
             if self.index < len(self.tokens) and self.current_token() == ":":
@@ -387,6 +403,7 @@ class Interpreter:
                         result = float(input())
                 else:
                     print("ERROR: INVALID INPUT CALL")
+                    self.consume_token()
             else:
                 result = input()
                 if self.index < len(self.tokens) and self.current_token() == "P":
@@ -432,6 +449,7 @@ class Interpreter:
             elif self.current_token()[0] == "<":
                 self.consume_token()
                 print("ERROR: '<' DOESN'T EXIST. USE '>'")
+                self.consume_token()
             elif self.current_token() == ">":
                 self.consume_token()
                 sec_if_val = ""
@@ -477,6 +495,7 @@ class Interpreter:
                             self.consume_token()
             else:
                 print("ERROR: INVALID IF CALL")
+                self.consume_token()
         elif self.current_token() == "!":
             self.consume_token()
             if self.current_token() == "!":
