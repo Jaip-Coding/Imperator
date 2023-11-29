@@ -45,46 +45,16 @@ class Interpreter:
                 is_equal = False
     
     def math(self):
-        if self.current_token() in self.variables:
-            number1 = float(self.variables[self.current_token()])
-        else:
-            number1 = float(self.tokens[self.index])
-        self.consume_token()
-        operator = ""
+        calc = ""
         result = 0
-        if self.tokens[self.index] == "+":
-            self.consume_token()
+        while self.index < len(self.tokens) and (self.tokens[self.index] != "P" and self.tokens[self.index] != "\n"):
             if self.current_token() in self.variables:
-                number2 = float(self.variables[self.current_token()])
+                calc += str(self.variables[self.current_token()])
             else:
-                number2 = float(self.tokens[self.index])
-            result = number1 + number2
-        elif self.tokens[self.index] == "-":
+                calc += self.current_token()
             self.consume_token()
-            if self.current_token() in self.variables:
-                number2 = float(self.variables[self.current_token()])
-            else:
-                number2 = float(self.tokens[self.index])
-            result = number1 - number2
-        elif self.tokens[self.index] == "*":
-            self.consume_token()
-            if self.current_token() in self.variables:
-                number2 = float(self.variables[self.current_token()])
-            else:
-                number2 = float(self.tokens[self.index])
-            result = number1 * number2
-        elif self.tokens[self.index] == "/":
-            self.consume_token()
-            if self.current_token() in self.variables:
-                number2 = float(self.variables[self.current_token()])
-            else:
-                number2 = float(self.tokens[self.index])
-            result = number1 / number2
-        else:
-            print("ERROR: INVALID OPERATOR")
-            return None
         
-        self.consume_token()
+        result = eval(calc)
         
         if self.index < len(self.tokens) and self.tokens[self.index] == "P":
             self.consume_token()
