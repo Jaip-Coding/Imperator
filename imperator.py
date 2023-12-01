@@ -239,11 +239,18 @@ class Interpreter:
                             self.consume_token()
                             if self.index < len(self.tokens) and self.current_token() == ":":
                                 self.consume_token()
-                                self.variables[var_name] = round(float(self.current_token()))
+                                if self.index < len(self.tokens) and self.current_token() in self.variables:
+                                    result = round(float(self.variables[self.current_token()]))
+                                    self.consume_token()
+                                    if self.index < len(self.tokens) and self.current_token() == "P":
+                                        self.consume_token()
+                                        print(result)
+                                result = round(float(self.current_token()))
                                 self.consume_token()
+                                self.variables[var_name] = result
                                 if self.index < len(self.tokens) and self.current_token() == "P":
                                     self.consume_token()
-                                    print(self.variables[var_name])
+                                    print(result)
                             else:
                                 print("ERROR: INVALID ROUND CALL")
                                 self.consume_token()
