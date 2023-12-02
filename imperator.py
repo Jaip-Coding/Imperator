@@ -311,11 +311,12 @@ class Interpreter:
                         if self.index < len(self.tokens) and self.current_token() == "P":
                             self.consume_token()
                             print(result)
-                    result = round(float(self.current_token()))
-                    self.consume_token()
-                    if self.index < len(self.tokens) and self.current_token() == "P":
+                    else:
+                        result = round(float(self.current_token()))
                         self.consume_token()
-                        print(result)
+                        if self.index < len(self.tokens) and self.current_token() == "P":
+                            self.consume_token()
+                            print(result)
                 else:
                     print("ERROR: INVALID ROUND CALL")
                     self.consume_token()
