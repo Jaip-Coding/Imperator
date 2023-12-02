@@ -137,11 +137,19 @@ class Interpreter:
                             self.consume_token()
                             if self.index < len(self.tokens) and self.current_token() == ":":
                                 self.consume_token()
-                                self.variables[var_name] = round(float(self.current_token()))
-                                self.consume_token()
-                                if self.index < len(self.tokens) and self.current_token() == "P":
+                                if self.index < len(self.tokens) and self.current_token() in self.variables:
+                                    result = round(float(self.variables[self.current_token()]))
                                     self.consume_token()
-                                    print(self.variables[var_name])
+                                    if self.index < len(self.tokens) and self.current_token() == "P":
+                                        self.consume_token()
+                                        print(result)
+                                else:
+                                    result = round(float(self.current_token()))
+                                    self.consume_token()
+                                    self.variables[var_name] = result
+                                    if self.index < len(self.tokens) and self.current_token() == "P":
+                                        self.consume_token()
+                                        print(result)
                             else:
                                 print("ERROR: INVALID ROUND CALL")
                                 self.consume_token()
@@ -245,12 +253,13 @@ class Interpreter:
                                     if self.index < len(self.tokens) and self.current_token() == "P":
                                         self.consume_token()
                                         print(result)
-                                result = round(float(self.current_token()))
-                                self.consume_token()
-                                self.variables[var_name] = result
-                                if self.index < len(self.tokens) and self.current_token() == "P":
+                                else:
+                                    result = round(float(self.current_token()))
                                     self.consume_token()
-                                    print(result)
+                                    self.variables[var_name] = result
+                                    if self.index < len(self.tokens) and self.current_token() == "P":
+                                        self.consume_token()
+                                        print(result)
                             else:
                                 print("ERROR: INVALID ROUND CALL")
                                 self.consume_token()
