@@ -139,6 +139,7 @@ class Interpreter:
                                 self.consume_token()
                                 if self.index < len(self.tokens) and self.current_token() in self.variables:
                                     result = round(float(self.variables[self.current_token()]))
+                                    self.variables[var_name] = result
                                     self.consume_token()
                                     if self.index < len(self.tokens) and self.current_token() == "P":
                                         self.consume_token()
@@ -249,6 +250,7 @@ class Interpreter:
                                 self.consume_token()
                                 if self.index < len(self.tokens) and self.current_token() in self.variables:
                                     result = round(float(self.variables[self.current_token()]))
+                                    self.variables[var_name] = result
                                     self.consume_token()
                                     if self.index < len(self.tokens) and self.current_token() == "P":
                                         self.consume_token()
