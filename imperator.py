@@ -196,6 +196,9 @@ class Interpreter:
                     else:
                         self.variables[var_name] = float(self.current_token())
                         self.consume_token()
+                        if self.index < len(self.tokens) and self.tokens[self.index] == "P":
+                            self.consume_token()
+                            print(result)
             else:
                 print("ERROR: VARIABLE ALREADY EXISTS")
                 self.consume_token()
@@ -307,6 +310,9 @@ class Interpreter:
                     else:
                         self.variables[var_name] = float(self.current_token())
                         self.consume_token()
+                        if self.index < len(self.tokens) and self.tokens[self.index] == "P":
+                            self.consume_token()
+                            print(result)
             else:
                 print("ERROR: VARIABLE DOESN'T EXIST")
                 self.consume_token()
