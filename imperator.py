@@ -170,7 +170,7 @@ class Interpreter:
                                             number2 = int(self.current_token())
                                             self.consume_token()
                                             self.consume_token()
-                                            self.variables[var_name] = random.randrange(number1, number2)
+                                            self.variables[var_name] = random.randrange(number1, number2 + 1)
                                             if self.index < len(self.tokens) and self.current_token() == "P":
                                                 self.consume_token()
                                                 print(self.variables[var_name])
@@ -284,7 +284,7 @@ class Interpreter:
                                             number2 = int(self.current_token())
                                             self.consume_token()
                                             self.consume_token()
-                                            self.variables[var_name] = random.randrange(number1, number2)
+                                            self.variables[var_name] = random.randrange(number1, number2 + 1)
                                             if self.index < len(self.tokens) and self.current_token() == "P":
                                                 self.consume_token()
                                                 print(self.variables[var_name])
@@ -353,7 +353,7 @@ class Interpreter:
                                 number2 = int(self.current_token())
                                 self.consume_token()
                                 self.consume_token()
-                                result = random.randrange(number1, number2)
+                                result = random.randrange(number1, number2 + 1)
                                 if self.index < len(self.tokens) and self.current_token() == "P":
                                     self.consume_token()
                                     print(result)
