@@ -470,6 +470,9 @@ class Interpreter:
                     sec_if_val = str(self.variables[self.current_token()])
                 else:
                     sec_if_val = str(self.current_token())
+                if if_val.isdecimal():
+                    if_val_float = float(if_val)
+                    if_val = str(if_val_float)
                 if sec_if_val.isdecimal():
                     sec_if_val_float = float(sec_if_val)
                     sec_if_val = str(sec_if_val_float)
