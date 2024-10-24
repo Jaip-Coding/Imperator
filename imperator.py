@@ -47,7 +47,7 @@ class Interpreter:
     def math(self):
         calc = ""
         result = 0
-        while self.index < len(self.tokens) and (self.tokens[self.index] != "P" and self.tokens[self.index] != "\n"):
+        while self.index < len(self.tokens) and (self.tokens[self.index] != "P" and self.tokens[self.index] != "\n" and self.tokens[self.index] != "!"):
             if self.current_token() in self.variables:
                 calc += str(self.variables[self.current_token()])
             else:
